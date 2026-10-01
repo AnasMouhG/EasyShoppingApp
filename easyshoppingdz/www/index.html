@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>EasyShoppingDZ – Algerian Online Megastore</title>
+<meta name="theme-color" content="#0b7a3e">
+<link href="app.css" rel="stylesheet">
+<style>
+:root{--bg:#f5f7f2;--card:#fff;--ink:#15221a;--mut:#5d6b62;--line:#dfe6dc;--g:#0b7a3e;--gt:#0b7a3e;--y:#f4b223;--r:#d3281c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1712;--card:#18231b;--ink:#eaf2ec;--mut:#9db0a3;--line:#27372c;--g:#1b8a4c;--gt:#5fd391}}
+:root[data-theme="dark"]{--bg:#0f1712;--card:#18231b;--ink:#eaf2ec;--mut:#9db0a3;--line:#27372c;--g:#1b8a4c;--gt:#5fd391}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;margin:0}
+.f{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif}
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--card);border-bottom:1px solid var(--line)}
+.wrap{max-width:1200px;margin:0 auto;padding:12px 16px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.02em}.logo span{color:var(--gt)}
+.stbtn,.cartb{color:var(--ink);display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--card);cursor:pointer;font-weight:500;max-width:210px;transition:border-color .2s,transform .15s}
+.stbtn:hover,.cartb:hover{border-color:var(--g)}
+.cartb{position:relative;font-size:18px}
+.bd{position:absolute;top:-7px;right:-7px;background:var(--r);color:#fff;font:700 11px 'DM Sans';border-radius:99px;min-width:20px;height:20px;display:grid;place-items:center;padding:0 5px;font-style:normal}
+.srch{border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:0 12px}
+.srch input{width:100%;background:none;border:0;outline:0;padding:10px 0;color:var(--ink);font-size:15px}
+.ban{border-radius:24px;color:#fff;padding:28px;position:relative;overflow:hidden;transition:background .5s}
+.ban h1{font-size:clamp(28px,5vw,46px);line-height:1.05;font-weight:800;margin:6px 0 14px}
+.pill{background:rgba(255,255,255,.16);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:500}
+.chip{flex:none;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 14px;cursor:pointer;font-weight:500;transition:.2s}
+.chip:hover{border-color:var(--g)}.chip.on{background:var(--g);border-color:var(--g);color:#fff}
+.chip small{display:block;opacity:.7;font-size:11px;font-weight:400}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.ph{height:128px;display:grid;place-items:center;font-size:56px;position:relative}
+.sk{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;border-radius:99px;padding:3px 9px;color:#fff}
+.btn{background:var(--g);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer;font-size:13px;transition:filter .2s}
+.btn:hover{filter:brightness(1.12)}.btn:disabled{background:var(--line);color:var(--mut);cursor:not-allowed}
+.stp{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stp button{width:30px;height:30px;border:0;background:var(--bg);color:var(--ink);cursor:pointer;font-weight:700}
+.stp button:hover{background:var(--g);color:#fff}.stp span{min-width:28px;text-align:center;font-weight:700;font-size:14px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:60px;height:60px;border-radius:50%;background:var(--y);color:#15221a;border:0;font-size:26px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.3);transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50;display:flex}
+.ov.on{opacity:1;pointer-events:auto}
+.pnl{background:var(--card);color:var(--ink);transition:transform .3s}
+.dr .pnl{margin-left:auto;width:min(430px,100%);height:100%;transform:translateX(100%);display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+.dr.on .pnl{transform:none}
+.mdl{align-items:center;justify-content:center;padding:16px}
+.mdl .pnl{width:min(640px,100%);max-height:90%;overflow:auto;border-radius:20px;padding:22px;transform:translateY(24px) scale(.97)}
+.mdl.on .pnl{transform:none}
+.sbtn{text-align:left;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--bg);cursor:pointer;color:var(--ink);transition:.2s}
+.sbtn:hover,.sbtn.on{border-color:var(--g);background:color-mix(in srgb,var(--g) 14%,var(--card))}
+.in{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg);color:var(--ink);font:inherit;margin-top:4px}
+.in:focus,.srch:focus-within{outline:2px solid var(--g)}
+.lb{font-size:13px;font-weight:700;display:block}
+.pay{border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer;text-align:center;font-weight:500;font-size:14px}
+.pay.on{border-color:var(--g);background:color-mix(in srgb,var(--g) 14%,var(--card))}
+#tw{position:fixed;left:50%;transform:translateX(-50%);top:calc(14px + env(safe-area-inset-top,0px));z-index:80;display:flex;flex-direction:column;gap:8px;width:min(92%,380px)}
+.tt{background:#15221a;color:#fff;border-left:5px solid var(--y);border-radius:10px;padding:12px 14px;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,.35);animation:ti .3s}
+.tt.er{border-color:var(--r)}@keyframes ti{from{opacity:0;transform:translateY(-10px)}}
+button:focus-visible,.chip:focus-visible{outline:2px solid var(--y);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap flex flex-wrap items-center gap-3">
+  <div class="logo f">EasyShopping<span>DZ</span></div>
+  <select class="stbtn wsel" aria-label="Choose your wilaya" style="max-width:170px"></select>
+  <button class="stbtn" data-a="stores" aria-label="Choose supermarket">📍<b id="stn" class="truncate text-sm"></b>▾</button>
+  <div class="srch order-last w-full md:order-none md:w-auto md:flex-1"><input id="q" placeholder="Search products, brands or categories" autocomplete="off"></div>
+  <button class="cartb ml-auto md:ml-0" data-a="cart" aria-label="Open cart">🛒<i class="bd" data-bd>0</i></button>
+</div></header>
+
+<main class="wrap">
+  <section class="ban" id="ban"></section>
+  <nav class="flex gap-2 overflow-x-auto py-4" id="cats" aria-label="Categories"></nav>
+  <div class="flex items-baseline justify-between mb-3"><h2 class="f text-xl font-extrabold" id="gt"></h2><span class="text-sm" style="color:var(--mut)" id="gc"></span></div>
+  <div class="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-24" id="grid"></div>
+</main>
+
+<button class="fab" data-a="cart" aria-label="Open cart">🛒<i class="bd" data-bd>0</i></button>
+<div id="tw"></div>
+
+<div class="ov mdl" id="sm"><div class="pnl">
+  <div class="flex justify-between items-center mb-3"><h2 class="f text-xl font-extrabold" id="smt">Choose your supermarket</h2><button class="btn" data-a="close">Close</button></div>
+  <label class="lb" for="mw">Your wilaya</label><select class="in wsel mb-1" id="mw"></select>
+  <p class="text-sm mb-3" style="color:var(--mut)" id="sn"></p>
+  <div class="grid gap-2 sm:grid-cols-2" id="sl"></div>
+</div></div>
+
+<div class="ov dr" id="dr"><div class="pnl">
+  <div class="flex justify-between items-center p-4" style="border-bottom:1px solid var(--line)"><h2 class="f text-xl font-extrabold">Your cart</h2><button class="btn" data-a="close">Close</button></div>
+  <div class="flex-1 overflow-auto p-4" id="ci"></div>
+  <div class="p-4" style="border-top:1px solid var(--line)" id="cf"></div>
+</div></div>
+
+<div class="ov mdl" id="co"><div class="pnl" id="cb">
+  <div class="flex justify-between items-center mb-3"><h2 class="f text-xl font-extrabold">Checkout</h2><button class="btn" data-a="close">Close</button></div>
+  <div class="grid gap-3 sm:grid-cols-2">
+    <div><label class="lb" for="fn">Full name</label><input class="in" id="fn" placeholder="Amine Benali"></div>
+    <div><label class="lb" for="fp">Phone</label><input class="in" id="fp" inputmode="tel" placeholder="0550 12 34 56"></div>
+    <div><label class="lb" for="fw">Wilaya</label><select class="in" id="fw"></select></div>
+    <div><label class="lb" for="fa">Delivery address</label><input class="in" id="fa" placeholder="Street, number, commune"></div>
+  </div>
+  <span class="lb mt-4 mb-1">Payment method</span>
+  <div class="grid grid-cols-3 gap-2" id="pm">
+    <div class="pay on" data-a="pay" data-v="cod">💵 Cash on delivery</div>
+    <div class="pay" data-a="pay" data-v="cib">💳 CIB card</div>
+    <div class="pay" data-a="pay" data-v="edh">🟡 Edahabia</div>
+  </div>
+  <div class="grid gap-3 sm:grid-cols-3 mt-3 hidden" id="cd">
+    <div class="sm:col-span-3"><label class="lb" for="cn">Card number (demo)</label><input class="in" id="cn" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000"></div>
+    <div><label class="lb" for="ce">Expiry</label><input class="in" id="ce" placeholder="MM/YY" maxlength="5"></div>
+    <div><label class="lb" for="cv">PIN</label><input class="in" id="cv" type="password" maxlength="4" placeholder="••••"></div>
+  </div>
+  <div class="mt-4 p-3 rounded-xl" style="background:var(--bg)" id="cs"></div>
+  <button class="btn w-full mt-4" style="padding:13px;font-size:15px" data-a="place" id="pb">Place order</button>
+</div></div>
+
+<script>
+const fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' DA';
+const $=s=>document.querySelector(s);
+const A=[["UNO Hypermarché","Hydra, Alger"],["Ardis","Bab Ezzouar, Alger"],["Centre Commercial Bab Ezzouar","Bab Ezzouar, Alger"],["Carrefour City Bab Ezzouar","Bab Ezzouar, Alger"],["Mustapha Supermarché","Sidi M'Hamed, Alger"],["Géant Algiers","Kouba, Alger"],["Bravo Supermarché","Dar El Beida, Alger"],["Familishop","Cheraga, Alger"],["Supérette Le Printemps","Alger Centre"],["Bouchaoui Market","Bouchaoui, Alger"],["Supérette El Bahdja","Casbah, Alger"],["Prima Market","Draria, Alger"],["Supérette Azur","Hussein Dey, Alger"],["Hypermarket Safir","El Harrach, Alger"],["Supérette Oasis","Birkhadem, Alger"],["Cosmos Market","Rouiba, Alger"],["Supérette Les Pins","Aïn Benian, Alger"],["Eden Market","Staoueli, Alger"],["City Market Algiers","El Biar, Alger"],["Royal Market","Zéralda, Alger"]];
+const W="Adrar,Chlef,Laghouat,Oum El Bouaghi,Batna,Béjaïa,Biskra,Béchar,Blida,Bouira,Tamanrasset,Tébessa,Tlemcen,Tiaret,Tizi Ouzou,Alger,Djelfa,Jijel,Sétif,Saïda,Skikda,Sidi Bel Abbès,Annaba,Guelma,Constantine,Médéa,Mostaganem,M'Sila,Mascara,Ouargla,Oran,El Bayadh,Illizi,Bordj Bou Arréridj,Boumerdès,El Tarf,Tindouf,Tissemsilt,El Oued,Khenchela,Souk Ahras,Tipaza,Mila,Aïn Defla,Naâma,Aïn Témouchent,Ghardaïa,Relizane,Timimoun,Bordj Badji Mokhtar,Ouled Djellal,Béni Abbès,In Salah,In Guezzam,Touggourt,Djanet,El M'Ghair,El Meniaa".split(',');
+const X={Oran:"Hyper El Bahia|Es Senia,Supermarché Les Planteurs|Les Planteurs,Bravo Bir El Djir|Bir El Djir,Marché Médina Jdida|Médina Jdida,Supérette Gambetta|Centre-ville,Cosmos Market Arzew|Arzew",Constantine:"Hyper Ain El Bey|Aïn El Bey,Supérette Sidi Mabrouk|Sidi Mabrouk,Supermarché Ziadia|Ziadia,Boussouf Market|Boussouf,Supérette Coudiat|Coudiat",Sétif:"Hyper Sétif Centre|Centre-ville,Supermarché El Hidhab|El Hidhab,Supérette 8 Mai 45|Centre-ville,Market Bel Air|Bel Air,Supérette Ain Arnat|Aïn Arnat",Blida:"Hyper Blida Mall|Blida,Supérette Les Roses|Centre-ville,Supermarché Ouled Yaïch|Ouled Yaïch,Market Boufarik|Boufarik",Annaba:"Hyper Annaba Corniche|Corniche,Supérette Seraïdi|Centre-ville,Supermarché El Bouni|El Bouni,Market Sidi Amar|Sidi Amar",Béjaïa:"Hyper Béjaïa Plage|Centre-ville,Supérette Aamriw|Aamriw,Supermarché Akbou|Akbou,Market Tichy|Tichy",'Tizi Ouzou':"Hyper Tizi Centre|Centre-ville,Supérette Boukhalfa|Boukhalfa,Supermarché Azazga|Azazga,Market Draâ Ben Khedda|Draâ Ben Khedda",Tlemcen:"Hyper Tlemcen Mansourah|Mansourah,Supérette Imama|Imama,Supermarché Maghnia|Maghnia,Market Chetouane|Chetouane"};
+let S=A;
+const storesOf=()=>{const w=W[wil],x=X[w];return w=='Alger'?A:x?x.split(',').map(t=>{const[n,c]=t.split('|');return[n,c+', '+w]}):['Supermarché Centre-Ville','Marché Moderne','Supérette El Baraka','Hyper Market Plus'].map(n=>[n,w])};
+const C={bak:{e:'🥐',n:'Pastries & Bakery',fr:'Pâtisserie & Boulangerie',bg:'#f6e0b4'},fre:{e:'🥛',n:'Dairy & Fresh Produce',fr:'Produits Frais',bg:'#d6ecd2'},bev:{e:'🥤',n:'Beverages & Drinks',fr:'Boissons',bg:'#cfe6f6'},cle:{e:'🧴',n:'Cleaning & Household',fr:'Produits de Nettoyage',bg:'#d9e7f2'},tec:{e:'🎮',n:'Electronics & Gaming',fr:'Electronique & Gaming',bg:'#e0d6f4'},car:{e:'🧼',n:'Personal Care & Cosmetics',fr:'Hygiène & Beauté',bg:'#f7d8e3'}};
+const P=[
+[1,'bak','Baguette tradition','Boulangerie du jour',15,'🥖'],[2,'bak','Croissant au beurre','Boulangerie du jour',40,'🥐'],[3,'bak','Makrout aux dattes 500g','Pâtisserie orientale',450,'🍯'],[4,'bak','Qalb el louz (6 pièces)','Pâtisserie orientale',380,'🍰'],[5,'bak','Biscuits Palmary 400g','Palmary',180,'🍪'],[6,'bak','Gaufrette chocolat','Bimo',60,'🧇'],
+[7,'fre','Lait UHT 1L','Candia',110,'🥛'],[8,'fre','Yaourt aux fruits (x4)','Soummam',130,'🥣'],[9,'fre','Fromage portions (x8)','Soummam',210,'🧀'],[10,'fre','Tomates 1kg','Marché frais',90,'🍅'],[11,'fre','Plateau d\'œufs (x30)','Ferme locale',480,'🥚'],[12,'fre','Spaghetti 500g','El Abla',75,'🍝'],
+[13,'bev','Eau minérale 1,5L','Ifri',40,'💧'],[14,'bev','Eau minérale 1,5L','Gouraya',38,'🚰'],[15,'bev','Selecto soda 1L','Hamoud Boualem',110,'🥤'],[16,'bev','Jus d\'orange 1L','Rouiba',160,'🧃'],[17,'bev','Boisson citron 1L','Ifri',95,'🍋'],[18,'bev','Café moulu 250g','Selecto',320,'☕'],
+[19,'cle','Lessive en poudre 3kg','Bifa',620,'🧺'],[20,'cle','Eau de javel 1L','La Croix',70,'🧴'],[21,'cle','Liquide vaisselle citron 1L','Bifa',230,'🍋'],[22,'cle','Papier toilette (x12)','Marque locale',360,'🧻'],[23,'cle','Sacs poubelle 50L (x20)','Marque locale',190,'🗑️'],[24,'cle','Éponges de cuisine (x6)','Marque locale',120,'🧽'],
+[25,'tec','Écouteurs Bluetooth','Condor',3900,'🎧'],[26,'tec','Manette DualSense PS5','Sony',14500,'🎮'],[27,'tec','Clavier gaming RGB','Redragon',6900,'⌨️'],[28,'tec','Souris gaming 6400 DPI','Logitech',3200,'🖱️'],[29,'tec','Power bank 20 000 mAh','Condor',3500,'🔋'],[30,'tec','Téléviseur LED 43"','Condor',42000,'📺'],
+[31,'car','Dentifrice 75ml','Signal',150,'🪥'],[32,'car','Shampooing 400ml','Dop',420,'🧴'],[33,'car','Gel douche 250ml','Palmolive',260,'🚿'],[34,'car','Savon de Marseille','Le Chat',140,'🧼'],[35,'car','Crème hydratante 200ml','Nivea',680,'🧴'],[36,'car','Couches bébé (x40)','Pampers',1450,'👶']];
+let wil=15,st=0,cat='all',q='',cart={},sold={},pay='cod',busy=false;
+const base=(s,id)=>{const r=(s*7919+id*104729)%100;return r<12?0:3+r%38};
+const sk=()=>wil*100+st;const stock=id=>Math.max(0,base(sk(),id)-(sold[sk()+'_'+id]||0));
+const get=id=>P.find(p=>p[0]==id);
+const sub=()=>Object.entries(cart).reduce((t,[id,n])=>t+get(id)[4]*n,0);
+const cnt=()=>Object.values(cart).reduce((a,b)=>a+b,0);
+const ship=s=>s>=4000||s==0?0:300;
+function toast(m,er){const d=document.createElement('div');d.className='tt'+(er?' er':'');d.textContent=m;$('#tw').append(d);setTimeout(()=>d.remove(),2400)}
+function open(id){closeAll();$('#'+id).classList.add('on')}
+function closeAll(){document.querySelectorAll('.ov').forEach(o=>o.classList.remove('on'));if(adj()){draw();toast("Cart adjusted to this store's stock",1)}}
+function adj(){let ch=0;for(const id in cart){const s=stock(id);if(!s){delete cart[id];ch++}else if(cart[id]>s){cart[id]=s;ch++}}return ch}
+function add(id){const s=stock(id),n=cart[id]||0;if(n>=s)return toast('Only '+s+' left in this store',1);cart[id]=n+1;window.Native&&Native.firstCartAdd();if(!n)toast(get(id)[2]+' added to cart');draw()}
+function dec(id){if(--cart[id]<=0)delete cart[id];draw()}
+function setStore(i){st=i;const ch=adj();closeAll();draw();toast('Now shopping at '+S[i][0]);if(ch)toast("Cart adjusted to this store's stock",1)}
+function setWil(i){wil=i;S=storesOf();st=0;draw();open('sm');toast('Wilaya: '+W[i]+'. Now pick a supermarket')}
+function banner(){const h=(st*47+wil*23+130)%360,n=P.filter(p=>stock(p[0])>0).length,hr=['08:00 – 23:00','07:30 – 22:00','09:00 – 00:00'][st%3];
+$('#ban').style.background=`linear-gradient(120deg,hsl(${h} 55% 26%),hsl(${(h+40)%360} 50% 36%))`;
+$('#ban').innerHTML=`<div class="text-sm opacity-80">Shopping at</div><h1 class="f">${S[st][0]}</h1><div class="flex flex-wrap gap-2 items-center"><span class="pill">📍 ${S[st][1]}</span><span class="pill">🕒 ${hr}</span><span class="pill">🛵 ${25+(st*7)%35} min delivery</span><span class="pill">✅ ${n} of ${P.length} items in stock</span><button class="pill" style="background:var(--y);color:#15221a;font-weight:700;cursor:pointer;border:0" data-a="stores">Change store or wilaya</button></div>`;$('#stn').textContent=S[st][0]}
+function cats(){const a=[['all','🛍️','All products','Tous les produits',P.length],...Object.entries(C).map(([k,v])=>[k,v.e,v.n,v.fr,P.filter(p=>p[1]==k).length])];
+$('#cats').innerHTML=a.map(c=>`<button class="chip ${cat==c[0]?'on':''}" data-a="cat" data-v="${c[0]}"><span class="text-xl">${c[1]}</span><span class="text-left">${c[2]}<small>${c[3]} · ${c[4]}</small></span></button>`).join('')}
+function grid(){const t=q.trim().toLowerCase(),L=P.filter(p=>(cat=='all'||p[1]==cat)&&(!t||(p[2]+' '+p[3]+' '+C[p[1]].n+' '+C[p[1]].fr).toLowerCase().includes(t)));
+$('#gt').textContent=cat=='all'?'All products':C[cat].n;$('#gc').textContent=L.length+' items';
+$('#grid').innerHTML=L.length?L.map(p=>{const s=stock(p[0]),n=cart[p[0]]||0,c=C[p[1]],bg=s==0?'var(--r)':s<=5?'#c47f00':'var(--g)',tx=s==0?'Out of stock':s<=5?'Only '+s+' left':s+' in stock';
+return `<article class="card"><div class="ph" style="background:${c.bg};${s?'':'filter:grayscale(1);opacity:.7'}">${p[5]}<span class="sk" style="background:${bg};filter:none">${tx}</span></div><div class="p-3"><div class="text-xs" style="color:var(--mut)">${p[3]}</div><div class="font-medium leading-tight" style="min-height:2.5em">${p[2]}</div><div class="flex items-center justify-between mt-2 gap-2"><b class="f" style="color:var(--gt)">${fmt(p[4])}</b>${!s?'<button class="btn" disabled>Sold out</button>':n?`<div class="stp"><button data-a="dec" data-id="${p[0]}" aria-label="Remove one">−</button><span>${n}</span><button data-a="add" data-id="${p[0]}" aria-label="Add one">+</button></div>`:`<button class="btn" data-a="add" data-id="${p[0]}">Add to cart</button>`}</div></div></article>`}).join(''):`<div class="col-span-full text-center py-16" style="color:var(--mut)"><div class="text-5xl mb-2">🔍</div>No product matches “${q.replace(/</g,'&lt;')}”. Try another name or category.</div>`}
+function cartUI(){const ids=Object.keys(cart),s=sub(),sh=ship(s);
+$('#ci').innerHTML=ids.length?ids.map(id=>{const p=get(id),n=cart[id];return `<div class="flex gap-3 items-center py-3" style="border-bottom:1px solid var(--line)"><div class="grid place-items-center rounded-xl text-3xl" style="width:60px;height:60px;background:${C[p[1]].bg}">${p[5]}</div><div class="flex-1 min-w-0"><div class="font-medium text-sm leading-tight">${p[2]}</div><div class="text-xs mb-1" style="color:var(--mut)">${p[3]} · ${fmt(p[4])}</div><div class="stp"><button data-a="dec" data-id="${id}" aria-label="Remove one">−</button><span>${n}</span><button data-a="add" data-id="${id}" aria-label="Add one">+</button></div></div><div class="text-right"><b class="text-sm">${fmt(p[4]*n)}</b><br><button class="text-xs underline" style="color:var(--r)" data-a="rm" data-id="${id}">Remove</button></div></div>`}).join(''):'<div class="text-center py-16" style="color:var(--mut)"><div class="text-5xl mb-2">🛒</div>Your cart is empty.<br>Add something from '+S[st][0]+'.</div>';
+$('#cf').innerHTML=`<div class="flex justify-between text-sm"><span>Subtotal</span><b>${fmt(s)}</b></div><div class="flex justify-between text-sm"><span>Delivery</span><b>${s?sh?fmt(sh):'Free':'–'}</b></div>${s&&sh?`<div class="text-xs mt-1" style="color:var(--mut)">Add ${fmt(4000-s)} for free delivery</div>`:''}<div class="flex justify-between f text-xl font-extrabold mt-2"><span>Total</span><span>${fmt(s?s+sh:0)}</span></div><button class="btn w-full mt-3" style="padding:13px;font-size:15px" data-a="checkout" ${s?'':'disabled'}>Proceed to checkout</button>`;
+document.querySelectorAll('[data-bd]').forEach(b=>{b.textContent=cnt();b.style.display=cnt()?'':'none'})}
+function stores(){document.querySelectorAll('.wsel').forEach(x=>x.value=wil);$('#smt').textContent='Supermarkets in '+W[wil];$('#sn').textContent=(W[wil]=='Alger'?'':'Store names outside Alger are illustrative demo data. ')+'Prices stay the same; stock and delivery time change with each store.';$('#sl').innerHTML=S.map((s,i)=>`<button class="sbtn ${i==st?'on':''}" data-a="store" data-v="${i}"><b class="text-sm">${i==st?'✓ ':''}${s[0]}</b><div class="text-xs" style="color:var(--mut)">${s[1]}</div></button>`).join('')}
+function save(){try{localStorage.setItem('esdz',JSON.stringify({wil,st,cart,sold}))}catch(e){}}
+function draw(){banner();cats();grid();cartUI();stores();save()}
+function summary(){const s=sub(),sh=ship(s);$('#cs').innerHTML=`<div class="text-sm">${cnt()} items from <b>${S[st][0]}</b></div><div class="flex justify-between text-sm mt-1"><span>Delivery</span><span>${sh?fmt(sh):'Free'}</span></div><div class="flex justify-between f font-extrabold text-lg"><span>Total</span><span>${fmt(s+sh)}</span></div>`}
+function place(){if(busy)return;const v=i=>$('#'+i).value.trim();
+if(v('fn').length<3)return toast('Enter your full name',1);
+if(!/^0[567]\d{8}$/.test(v('fp').replace(/\s/g,'')))return toast('Enter a valid Algerian mobile number (05, 06 or 07…)',1);
+if(!v('fw'))return toast('Select your wilaya',1);
+if(v('fa').length<6)return toast('Enter your delivery address',1);
+if(pay!='cod'){if(v('cn').replace(/\s/g,'').length<16)return toast('Enter a 16-digit card number',1);if(!/^\d\d\/\d\d$/.test(v('ce')))return toast('Expiry must look like 08/28',1);if(v('cv').length<4)return toast('Enter your 4-digit PIN',1)}
+busy=true;$('#pb').textContent='Processing payment…';
+setTimeout(()=>{const id='DZ-'+Math.floor(100000+Math.random()*899999),t=sub()+ship(sub()),w=v('fw');
+window.Native&&Native.orderPlaced(id,t,25+(st*7)%35,S[st][0]);for(const k in cart)sold[sk()+'_'+k]=(sold[sk()+'_'+k]||0)+cart[k];cart={};busy=false;draw();
+$('#cb').innerHTML=`<div class="text-center py-6"><div class="text-6xl">✅</div><h2 class="f text-2xl font-extrabold mt-2">Order placed successfully!</h2><p class="mt-2" style="color:var(--mut)">Order <b>${id}</b> · ${fmt(t)} · ${pay=='cod'?'Cash on delivery':pay=='cib'?'Paid by CIB':'Paid by Edahabia'}<br>${S[st][0]} will deliver to ${w} in about ${25+(st*7)%35} minutes.</p><button class="btn mt-5" style="padding:12px 22px" data-a="close">Keep shopping</button></div>`;toast('Order placed successfully!')},1000)}
+document.addEventListener('click',e=>{
+ if(e.target.classList.contains('ov'))return closeAll();
+ const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,id=+b.dataset.id;
+ if(a=='add')add(id);else if(a=='dec')dec(id);else if(a=='rm'){delete cart[id];draw()}
+ else if(a=='cat'){cat=b.dataset.v;grid();cats()}
+ else if(a=='store')setStore(+b.dataset.v);else if(a=='stores')open('sm');else if(a=='cart')open('dr');else if(a=='close')closeAll();
+ else if(a=='checkout'){$('#cb').innerHTML=CB;pay='cod';$('#fw').selectedIndex=wil+1;summary();open('co')}
+ else if(a=='pay'){pay=b.dataset.v;document.querySelectorAll('#pm .pay').forEach(x=>x.classList.toggle('on',x==b));$('#cd').classList.toggle('hidden',pay=='cod')}
+ else if(a=='place')place();
+});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')closeAll()});
+$('#q').addEventListener('input',e=>{q=e.target.value;grid()});
+$('#fw').innerHTML='<option value="">Select wilaya</option>'+W.map((w,i)=>`<option>${String(i+1).padStart(2,'0')} – ${w}</option>`).join('');
+document.querySelectorAll('.wsel').forEach(x=>x.innerHTML=W.map((w,i)=>`<option value="${i}">${String(i+1).padStart(2,'0')} – ${w}</option>`).join(''));
+document.addEventListener('change',e=>{if(e.target.classList.contains('wsel')&&+e.target.value!==wil)setWil(+e.target.value)});
+const CB=$('#cb').innerHTML;
+try{const s=JSON.parse(localStorage.getItem('esdz')||'{}');
+if(Number.isInteger(s.wil)&&W[s.wil]){wil=s.wil;S=storesOf();if(Number.isInteger(s.st)&&s.st>=0&&s.st<S.length)st=s.st}
+sold=s.sold||{};for(const id in (s.cart||{}))if(get(id)&&s.cart[id]>0)cart[id]=s.cart[id];adj()}catch(e){}
+draw();
+</script>
+<script src="native.js"></script>
+</body>
+</html>

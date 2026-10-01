@@ -1,0 +1,24 @@
+{
+	"appId": "com.easyshoppingdz.app",
+	"appName": "EasyShoppingDZ",
+	"webDir": "www",
+	"android": {
+		"allowMixedContent": false
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"backgroundColor": "#0b7a3e",
+			"showSpinner": false,
+			"androidScaleType": "CENTER_CROP"
+		},
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_shop",
+			"iconColor": "#0B7A3E"
+		},
+		"SystemBars": {
+			"insetsHandling": "css",
+			"initialViewportFitValueHint": "cover"
+		}
+	}
+}
